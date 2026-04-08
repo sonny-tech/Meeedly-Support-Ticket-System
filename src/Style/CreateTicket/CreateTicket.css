@@ -2,6 +2,7 @@
     align-items: flex-start;
     justify-content: center;
     padding: 2rem;
+    background-color: var(--bg-main); 
 }
 
 .create-container {
@@ -17,7 +18,7 @@
 .btn-back {
     background: none;
     border: none;
-    color: #007bff;
+    color: #007bff; 
     font-size: 0.9rem;
     cursor: pointer;
     padding: 0;
@@ -31,15 +32,16 @@
 .create-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #222;
+    color: var(--text-main); 
     margin: 0;
 }
 
 .create-form {
-    background: white;
+    background: var(--bg-card); 
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -54,18 +56,20 @@
 .form-label {
     font-weight: 600;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--text-main); 
 }
 
 .form-input,
 .form-textarea,
 .form-select {
     padding: 0.6rem 0.85rem;
-    border: 1px solid #ddd;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 0.95rem;
     font-family: inherit;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
     outline: none;
 }
 
@@ -73,6 +77,10 @@
 .form-textarea:focus,
 .form-select:focus {
     border-color: #007bff;
+}
+
+.form-select {
+    background-image: none;
 }
 
 .form-textarea {

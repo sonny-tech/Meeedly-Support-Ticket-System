@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import { createContext, useContext, useReducer, useEffect, useState } from "react";
 import mockTickets from "../Data/mockTickets";
 
 const TicketContext = createContext();
@@ -34,12 +34,26 @@ export const TicketProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(ticketReducer, { tickets: initial });
 
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        console.log("Switching theme to:", newTheme);
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+    useEffect(() => {
+        document.body.className = theme; 
+        console.log("Body class applied:", document.body.className);
+    }, [theme]);
+
     useEffect(() => {
         localStorage.setItem("tickets", JSON.stringify(state.tickets));
     }, [state.tickets]);
 
     return (
-        <TicketContext.Provider value={{ state, dispatch }}>
+        <TicketContext.Provider value={{ state, dispatch, theme, toggleTheme }}>
             {children}
         </TicketContext.Provider>
     );

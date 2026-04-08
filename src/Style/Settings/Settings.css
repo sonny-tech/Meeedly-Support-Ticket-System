@@ -1,0 +1,67 @@
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    min-height: 80vh;
+}
+
+.settings-container h1 {
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    font-size: 2.5rem;
+}
+
+.settings-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.setting-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.setting-item p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.theme-toggle-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-weight: bold;
+    z-index: 10;
+}
+
+.theme-toggle-btn.light { 
+    background: #121212; 
+    color: #ffffff; 
+}
+
+.theme-toggle-btn.dark { 
+    background: #f8f9fa; 
+    color: #333333; 
+}
+
+.theme-toggle-btn:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

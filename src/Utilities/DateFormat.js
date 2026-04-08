@@ -4,7 +4,6 @@ const DateFormats = {
         const date = new Date(inputDate);
         const seconds = Math.floor((now - date) / 1000);
 
-        // function loops through array to see time differences starting from largest to smallest
         const intervals = [
             { label: "year", seconds: 31536000 },
             { label: "month", seconds: 2592000 },

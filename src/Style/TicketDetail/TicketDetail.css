@@ -1,6 +1,7 @@
 .ticket-details-main {
     align-items: flex-start;
     padding: 2rem;
+    background-color: var(--bg-main);
 }
 
 .details-container {
@@ -25,32 +26,33 @@
 }
 
 .ticket-info-card {
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
 }
 
 .ticket-info-card h1 {
     margin: 0 0 1rem 0;
     font-size: 1.6rem;
-    color: #222;
+    color: var(--text-main);
 }
 
 .metadata-row {
     display: flex;
     gap: 2rem;
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
 
 .description-text {
-    color: #444;
+    color: var(--text-main);
     line-height: 1.6;
     margin: 0;
 }
@@ -62,13 +64,13 @@
     font-weight: 600;
 }
 
-.status-open { background: #e3f2fd; color: #1565c0; }
-.status-in-progress { background: #fff8e1; color: #f57f17; }
-.status-resolved { background: #e8f5e9; color: #2e7d32; }
+.status-open { background: rgba(227, 242, 253, 0.2); color: #42a5f5; border: 1px solid rgba(66, 165, 245, 0.3); }
+.status-in-progress { background: rgba(255, 248, 225, 0.2); color: #ffca28; border: 1px solid rgba(255, 202, 40, 0.3); }
+.status-resolved { background: rgba(232, 245, 233, 0.2); color: #66bb6a; border: 1px solid rgba(102, 187, 106, 0.3); }
 
-.priority-high { color: #c62828; font-weight: 600; }
-.priority-medium { color: #e65100; font-weight: 600; }
-.priority-low { color: #558b2f; font-weight: 600; }
+.priority-high { color: #ef5350; font-weight: 600; }
+.priority-medium { color: #ffa726; font-weight: 600; }
+.priority-low { color: #9ccc65; font-weight: 600; }
 
 .message-history {
     display: flex;
@@ -79,7 +81,7 @@
 
 .message-history h3 {
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
 }
 
@@ -87,17 +89,20 @@
     padding: 1rem 1.25rem;
     border-radius: 8px;
     max-width: 80%;
+    color: var(--text-main);
 }
 
 .message-bubble.user {
     align-self: flex-start;
-    background: #f8f9fa;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-left: 4px solid #007bff;
 }
 
 .message-bubble.staff {
     align-self: flex-end;
-    background: #e7f3ff;
+    background: rgba(0, 123, 255, 0.1); 
+    border: 1px solid rgba(0, 123, 255, 0.2);
     border-right: 4px solid #28a745;
     text-align: right;
 }
@@ -105,14 +110,15 @@
 .message-meta {
     font-size: 0.8rem;
     margin-bottom: 0.4rem;
-    color: #888;
+    color: var(--text-muted);
 }
 
 .reply-section {
-    background: white;
+    background: var(--bg-card);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .reply-section form {
@@ -124,7 +130,9 @@
 .reply-textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 0.95rem;
     font-family: inherit;
@@ -155,6 +163,7 @@
 }
 
 .btn-submit:disabled {
-    background-color: #aaa;
+    background-color: var(--text-muted);
+    opacity: 0.5;
     cursor: not-allowed;
 }

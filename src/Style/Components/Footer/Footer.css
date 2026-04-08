@@ -1,8 +1,16 @@
 .footer {
-    background-color: #ffffff;
-    color: #555;
+    background-color: var(--bg-card); 
+    color: var(--text-muted); 
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer h3, 
+.footer .footer-logo-text,
+.footer strong {
+    color: var(--text-main);
+    transition: color 0.3s ease;
 }

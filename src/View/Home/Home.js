@@ -31,7 +31,6 @@ const Home = () => {
         });
     };
 
-    // Show loading while count is null
     if (count === null) return <div>Loading...</div>;
 
     return (

@@ -132,8 +132,6 @@ const About = () => {
             fetchPosts();
         }
     }, [fetchPosts]);
-
-    // NEW: mark when the user has actually scrolled a bit
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY > 100) userHasScrolledRef.current = true;
@@ -142,7 +140,6 @@ const About = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    // NEW: intersection observer for "load more at bottom"
     useEffect(() => {
         const node = sentinelRef.current;
 
@@ -155,7 +152,6 @@ const About = () => {
                     entry.isIntersecting &&
                     !loading &&
                     hasMore &&
-                    // require that the user actually scrolled before we auto-load
                     userHasScrolledRef.current
                 ) {
                     fetchPosts();
@@ -163,7 +159,6 @@ const About = () => {
             },
             {
                 root: null,
-                // start fetching a bit *before* the absolute bottom is reached
                 rootMargin: "0px 0px 400px 0px",
                 threshold: 0.1,
             }
@@ -171,7 +166,7 @@ const About = () => {
 
         observer.observe(node);
         return () => observer.disconnect();
-    }, [loading, hasMore, fetchPosts]); // fetchPosts is stable enough here
+    }, [loading, hasMore, fetchPosts]);
 
 return (
     <>

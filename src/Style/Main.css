@@ -1,18 +1,24 @@
-:root{
+:root {
+
     --ml-general-bg-color: #f50a0a;
     --ml-general-white-color: #ffffff;
     --ml-general-black-color: #16161d;
+    
+    --dynamic-card-bg: var(--bg-card);
 }
 
 *,
 :after,
-:before{
+:before {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
 
-bodu{
+body {
     margin: 0;
     padding: 0;
-}   
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

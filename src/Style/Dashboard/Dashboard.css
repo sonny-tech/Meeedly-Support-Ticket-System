@@ -1,6 +1,7 @@
 .dashboard-main {
-    align-items: flex-start;
     padding: 2rem;
+    background-color: var(--bg-main);
+    min-height: 100vh;
 }
 
 .dashboard-container {
@@ -9,132 +10,87 @@
     margin: 0 auto;
 }
 
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
 .dashboard-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #222;
-}
-
-.btn-create {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.btn-create:hover {
-    background-color: #0056b3;
-}
-
-.dashboard-filters {
-    display: flex;
-    gap: 1rem;
+    color: var(--text-main) !important;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
 }
 
-.filter-search {
-    flex: 1;
-    min-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ddd;
+.filter-search, .filter-select {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
     border-radius: 8px;
-    font-size: 0.95rem;
-}
-
-.filter-select {
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    background-color: white;
-    cursor: pointer;
 }
 
 .ticket-table {
-    background: white;
+    background: var(--bg-card);
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border-color);
     overflow: hidden;
 }
 
 .ticket-table-header {
     display: grid;
     grid-template-columns: 100px 1fr 120px 100px 110px 110px;
-    padding: 0.75rem 1.25rem;
-    background-color: #f8f9fa;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
     font-weight: 600;
-    font-size: 0.85rem;
-    color: #555;
-    border-bottom: 1px solid #eee;
+    color: var(--text-main) !important; 
 }
 
 .ticket-row {
     display: grid;
     grid-template-columns: 100px 1fr 120px 100px 110px 110px;
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid #f0f0f0;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-card);
     align-items: center;
-    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    color: var(--text-main) !important; 
 }
 
 .ticket-row:hover {
-    background-color: #f5f8ff;
-}
-
-.ticket-id {
-    color: #007bff;
-    font-weight: 600;
-    font-size: 0.85rem;
+    background-color: rgba(0, 123, 255, 0.05);
 }
 
 .ticket-title {
-    font-weight: 500;
-    color: #222;
+    font-weight: 600;
+    color: var(--text-main) !important;
 }
 
 .ticket-category {
-    color: #555;
+    color: var(--text-main) !important;
     text-transform: capitalize;
+    opacity: 0.9;
+}
+
+.ticket-id {
+    color: #007bff !important;
+    font-weight: bold;
 }
 
 .ticket-date {
-    color: #888;
-    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .badge {
     padding: 0.25rem 0.65rem;
     border-radius: 20px;
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: capitalize;
+    border: 1px solid transparent;
+    color: var(--text-main) !important; 
 }
 
-.badge-open { background-color: #e3f2fd; color: #1565c0; }
-.badge-in-progress { background-color: #fff8e1; color: #f57f17; }
-.badge-resolved { background-color: #e8f5e9; color: #2e7d32; }
-.badge-high { background-color: #fdecea; color: #c62828; }
-.badge-medium { background-color: #fff3e0; color: #e65100; }
-.badge-low { background-color: #f1f8e9; color: #558b2f; }
+.badge-open { background-color: rgba(66, 165, 245, 0.2); border-color: rgba(66, 165, 245, 0.4); }
+.badge-in-progress { background-color: rgba(255, 202, 40, 0.2); border-color: rgba(255, 202, 40, 0.4); }
+.badge-resolved { background-color: rgba(102, 187, 106, 0.2); border-color: rgba(102, 187, 106, 0.4); }
 
-.empty-state {
-    text-align: center;
-    padding: 3rem;
-    color: #888;
-    background: white;
-    border-radius: 12px;
-}
+.badge-high { background-color: rgba(239, 83, 80, 0.2); border-color: rgba(239, 83, 80, 0.4); }
+.badge-medium { background-color: rgba(255, 167, 38, 0.2); border-color: rgba(255, 167, 38, 0.4); }
+.badge-low { background-color: rgba(156, 204, 101, 0.2); border-color: rgba(156, 204, 101, 0.4); }

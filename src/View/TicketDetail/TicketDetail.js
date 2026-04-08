@@ -19,8 +19,8 @@ const TicketDetail = () => {
         if (!replyText.trim()) return;
 
         const newMessage = {
-            id: `MSG-${Date.now()}`, // Unique ID based on timestamp
-            author: "User", // POV: User
+            id: `MSG-${Date.now()}`,
+            author: "User", 
             content: replyText.trim(),
             timestamp: new Date().toISOString(),
             isStaff: false,
@@ -31,7 +31,7 @@ const TicketDetail = () => {
             payload: { ticketId: id, message: newMessage },
         });
 
-        setReplyText(""); // Clear the input
+        setReplyText(""); 
     };
 
     if (!ticket) {
@@ -70,7 +70,7 @@ const TicketDetail = () => {
                         ))}
                     </section>
 
-                    {/* REPLY FORM */}
+                    {}
                     <section className="reply-section">
                         <form onSubmit={handleReply}>
                             <textarea
